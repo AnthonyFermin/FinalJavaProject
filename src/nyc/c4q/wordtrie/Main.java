@@ -32,8 +32,8 @@ public class Main {
      * @return
      *   A set containing all words in the dictionary.
      */
-    public static Set<String> loadDictionary() {
-        Set<String> dictionary = new HashSet<String>();
+    public static WordTrie loadDictionary() {
+        WordTrie dictionary = new WordTrie();
         try {
             BufferedReader reader = new BufferedReader(new FileReader(DICTIONARY_FILE));
             for (String word = reader.readLine(); word != null; word = reader.readLine()) {
@@ -51,12 +51,12 @@ public class Main {
 
     public static void main(String[] args) {
         // Load the words in the dictionary.
-        final Set<String> dictionary = loadDictionary();
+        final WordTrie dictionary = loadDictionary();
 
         // Print the dictionary.
-        for (String word : dictionary)
-            System.out.println(word);
-        System.out.println();
+//        for (String word : dictionary)
+//            System.out.println(word);
+//        System.out.println();
 
         // Loop for user input.
         final Scanner scanner = new Scanner(System.in);
